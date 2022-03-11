@@ -21,11 +21,19 @@ body {
 }
 
 .nav-menu {
+  position: fixed;
+  right: 0;
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
-  margin-left: 58vw;
   background-color: white;
   height: 20vh;
   padding-top: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.nav-menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
