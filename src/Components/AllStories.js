@@ -1,11 +1,19 @@
 import React from 'react';
 
 function Stories(props) {
-  return (
-    <div className="story-container">
-      <div>This will be a story</div>
-    </div>
-  );
+  const stories = [];
+  for (let i = 0; i < 10; i++) {
+    stories.push(
+      <div key={i} className="story">
+        <h4>
+          This is going to be a headline. It might be kinda long or it might be
+          kinda short
+        </h4>
+        <p>This will be the source, possibly a logo</p>
+      </div>
+    );
+  }
+  return <div className="story-container">{stories}</div>;
 }
 
 export default Stories;

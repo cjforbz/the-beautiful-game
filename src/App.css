@@ -46,3 +46,16 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+
+.story-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 1rem;
+  padding: 0.5rem;
+}
