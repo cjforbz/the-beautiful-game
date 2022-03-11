@@ -1,11 +1,31 @@
+body {
+  background-color: lightgrey;
+}
+
 .nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   background-color: green;
   color: white;
-  padding-left: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
+  border-bottom: 0.3rem;
 }
 
 .nav-bar h3 {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  font-family: 'Trattatello', sans-serif;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-left: 58vw;
+  background-color: white;
+  height: 20vh;
+  padding-top: 1rem;
 }
