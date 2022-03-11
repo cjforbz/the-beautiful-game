@@ -7,17 +7,24 @@ body {
   flex-direction: row;
   justify-content: space-between;
   background-color: green;
+  background: linear-gradient(to top, rgb(88, 206, 88), green);
   color: white;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
-  border-bottom: 0.3rem;
 }
 
 .nav-bar h3 {
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: 'Trattatello', sans-serif;
+}
+
+.nav-bar button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  color: rgb(65, 62, 62);
 }
 
 .nav-menu {
@@ -30,6 +37,8 @@ body {
   padding-top: 1rem;
   padding-right: 1rem;
   padding-bottom: 1rem;
+  border-left: 0.1rem solid black;
+  border-bottom: 0.1rem solid black;
 }
 
 .nav-menu ul {

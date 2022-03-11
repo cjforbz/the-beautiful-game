@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CgMenuGridO } from 'react-icons/cg';
 
 function NavBar() {
   const [navOpen, setNavOpen] = useState(false);
@@ -10,7 +11,9 @@ function NavBar() {
       <div className="nav-container">
         <nav className="nav-bar">
           <h3>The Beautiful Game</h3>
-          <button onClick={handleToggle}>Site menu</button>
+          <button onClick={handleToggle}>
+            <CgMenuGridO />
+          </button>
         </nav>
       </div>
       {navOpen ? (
