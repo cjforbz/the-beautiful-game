@@ -2,7 +2,7 @@ import React from 'react';
 
 function Stories(props) {
   const stories = [];
-  for (let i = 0; i < 10; i++) {
+  for (let i = 0; i < 50; i++) {
     stories.push(
       <div key={i} className="story">
         <h4>
