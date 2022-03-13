@@ -31,7 +31,7 @@ function Stories(props) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return (
+  return stories[0] ? (
     <div className="story-container">
       {stories.map((story, idx) => {
         return (
@@ -50,6 +50,8 @@ function Stories(props) {
         );
       })}
     </div>
+  ) : (
+    <div>Loading</div>
   );
 }
 
