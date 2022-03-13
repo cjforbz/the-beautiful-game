@@ -1,37 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import MY_RAPID_API_KEY from '../config';
-
-const options = {
-  method: 'GET',
-  url: 'https://bing-news-search1.p.rapidapi.com/news',
-  params: { category: 'Sports_Soccer', safeSearch: 'Off', textFormat: 'Raw' },
-  headers: {
-    'x-bingapis-sdk': 'true',
-    'x-rapidapi-host': 'bing-news-search1.p.rapidapi.com',
-    'x-rapidapi-key': MY_RAPID_API_KEY,
-  },
-};
 
 function Stories(props) {
   const [stories, setStories] = useState([]);
   useEffect(() => {
     const fetchStories = async () => {
-      await axios
-        .request(options)
-        .then(function (response) {
-          setStories(response.data.value);
-          console.log(response.data.value);
-        })
-        .catch(function (error) {
-          console.error(error);
-        });
+      try {
+        const { data: storyData } = await axios.get('/allStories');
+        // console.log(storyData);
+        setStories(storyData);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchStories();
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return stories[0] ? (
+  return stories ? (
     <div className="story-container">
       {stories.map((story, idx) => {
         return (
@@ -51,7 +37,7 @@ function Stories(props) {
       })}
     </div>
   ) : (
-    <div>Loading</div>
+    <div>{console.log(stories)}</div>
   );
 }
 
