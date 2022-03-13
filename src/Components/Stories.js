@@ -3,12 +3,14 @@ import axios from 'axios';
 
 function Stories(props) {
   const [stories, setStories] = useState([]);
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchStories = async () => {
       try {
         const { data: storyData } = await axios.get('/allStories');
-        // console.log(storyData);
+        console.log(storyData);
         setStories(storyData);
+        setLoading(false);
       } catch (error) {
         console.error(error);
       }
@@ -17,7 +19,7 @@ function Stories(props) {
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  return stories ? (
+  return !loading ? (
     <div className="story-container">
       {stories.map((story, idx) => {
         return (
@@ -37,7 +39,7 @@ function Stories(props) {
       })}
     </div>
   ) : (
-    <div>{console.log(stories)}</div>
+    <div>loading</div>
   );
 }
 
