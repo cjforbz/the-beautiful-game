@@ -8,7 +8,6 @@ function Stories(props) {
     const fetchStories = async () => {
       try {
         const { data: storyData } = await axios.get('/allStories');
-        console.log(storyData);
         setStories(storyData);
         setLoading(false);
       } catch (error) {
@@ -44,16 +43,3 @@ function Stories(props) {
 }
 
 export default Stories;
-
-// const stories = [];
-// for (let i = 0; i < 50; i++) {
-//   stories.push(
-//     <div key={i} className="story">
-//       <h4>
-//         This is going to be a headline. It might be kinda long or it might be
-//         kinda short
-//       </h4>
-//       <p>This will be the source, possibly a logo</p>
-//     </div>
-//   );
-// }
