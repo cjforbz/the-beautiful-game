@@ -26,11 +26,11 @@ function Stories(props) {
             <a href={story.url} className="story-link">
               <h4>{story.name}</h4>
               <p>{story.description}</p>
-              <img
+              {/* <img
                 className="provider-thumbnail"
                 src={story.provider[0].image.thumbnail.contentUrl}
                 alt=""
-              />
+              /> */}
               <span>-{story.provider[0].name}</span>
             </a>
           </div>
