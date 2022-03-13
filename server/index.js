@@ -1,14 +1,15 @@
 const PORT = process.env.PORT || 8080;
 const express = require('express');
-const cors = require('cors');
+const path = require('path');
 const axios = require('axios');
 require('dotenv').config();
 
 const app = express();
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 app.get('/', (req, res, next) => {
-  console.log('working');
-  res.json('here');
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
 app.get('/allStories', async (req, res, next) => {
@@ -26,7 +27,9 @@ app.get('/allStories', async (req, res, next) => {
     await axios.request(options).then((response) => {
       res.json(response.data.value);
     });
-  } catch (error) {}
+  } catch (error) {
+    console.error(error);
+  }
 });
 
 app.listen(PORT, () => console.log(`getting it done on Port ${PORT}`));
