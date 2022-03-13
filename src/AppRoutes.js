@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
-import Stories from './Components/AllStories';
+import Stories from './Components/Stories';
 
 function AppRoutes() {
   return (

@@ -58,4 +58,34 @@ body {
   background-color: white;
   margin: 1rem;
   padding: 0.5rem;
+  text-decoration: none;
+  height: auto;
+}
+
+.story img {
+  height: 2rem;
+  width: 2rem;
+  margin-right: 0.8rem;
+}
+
+.story p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: gray;
+}
+
+.story span {
+  position: relative;
+  bottom: 0.5rem;
+  font-weight: bold;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.story a {
+  padding: 0.5rem;
+  color: black;
+  text-decoration: none;
 }
