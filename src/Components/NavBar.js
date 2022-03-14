@@ -10,6 +10,7 @@ function NavBar() {
     <div>
       <div className="nav-container">
         <nav className="nav-bar">
+          {/* <img src={process.env.PUBLIC_URL + '/favicon.ico'} alt="" /> */}
           <h3>The Beautiful Game</h3>
           <button onClick={handleToggle}>
             <CgMenuGridO />

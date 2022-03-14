@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function Stories(props) {
-  const [stories, setStories] = useState([]);
+function Stories() {
+  const [stories, setStories] = useState(null);
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     const fetchStories = async () => {
@@ -11,7 +11,7 @@ function Stories(props) {
         setStories(storyData);
         setLoading(false);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
     };
     fetchStories();
@@ -28,7 +28,11 @@ function Stories(props) {
               <p>{story.description}</p>
               <img
                 className="provider-thumbnail"
-                src={story.provider[0].image.thumbnail.contentUrl}
+                src={
+                  story.provider[0].image
+                    ? story.provider[0].image.thumbnail.contentUrl
+                    : 'loading'
+                }
                 alt=""
               />
               <span>-{story.provider[0].name}</span>
