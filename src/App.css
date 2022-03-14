@@ -14,7 +14,10 @@ body {
   padding-top: 0.3rem;
   padding-bottom: 0.3rem;
 }
-
+.nav-bar img {
+  height: 2rem;
+  width: 2rem;
+}
 .nav-bar h3 {
   font-size: 1rem;
   font-family: 'Trattatello', sans-serif;
